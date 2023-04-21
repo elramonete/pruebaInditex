@@ -20,8 +20,8 @@ Teneis una interfaz swagger disponible para hacer las pruebas necesarias en http
 ![image](https://user-images.githubusercontent.com/7735554/233591202-9f26d139-71a0-4464-8977-c7bc8a31ed0b.png)
 
 En este proyecto he intentado realizar una arquitectura hexagonal, aunque no lleve mucho tiempo trabajando con este tipo de arquitectura,
-queria demostrarme a mi mismo que podia crear una arquitectura como esta desde cero. En esta arquitectura hay 3 partes diferenciadas, el domain, donde se encuentra
-el dominio de la aplicacion, otra parte llamada aplicacion que es el corazon del aplicativo y donde se encuentra toda la lógica de esta, y otra de infraestructura donde 
+queria demostrarme a mi mismo que podia crear una arquitectura como esta desde cero. En esta arquitectura hay 3 partes diferenciadas, el **domain**, donde se encuentra
+el dominio de la **aplicacion**, otra parte llamada aplicacion que es el corazon del aplicativo y donde se encuentra toda la lógica de esta, y otra de **infraestructura** donde 
 he metido tanto los repositorios con acceso a bbdd incluidas las entidades como los controladores a traves de los cuales se conecta la applicacion con el exterior.
 
 A partir de la parte de la applicacion que como os decia era el centro de la applicacion es donde se encuentran los servicios que realizan toda la logica y estos servicios
