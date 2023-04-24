@@ -1,4 +1,4 @@
-package ucha.edu.pruebainditex.domain.entities;
+package ucha.edu.pruebainditex.infrastructure.repositories.entities;
 
 
 import lombok.AllArgsConstructor;
@@ -11,9 +11,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 @Data
@@ -26,9 +26,9 @@ public class Price {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "BRAND_ID")
-    private Long brandId;
+    @JoinColumn(name = "BRAND_ID", referencedColumnName = "ID")
+    @ManyToOne
+    private Brand brand;
 
     @Column(name = "START_DATE")
     private LocalDateTime startDate;
@@ -48,7 +48,7 @@ public class Price {
     @Column(name = "PRICE")
     private BigDecimal price;
 
-    @Column(name = "CURR")
+    @Column(name = "CURRENCY")
     private String currency;
 
 }

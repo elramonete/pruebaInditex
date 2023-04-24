@@ -3,19 +3,19 @@ package ucha.edu.pruebainditex.application;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ucha.edu.pruebainditex.application.ports.RepositoryPort;
+import ucha.edu.pruebainditex.application.ports.ServicePort;
 import ucha.edu.pruebainditex.domain.dto.PriceDto;
 import ucha.edu.pruebainditex.infrastructure.exceptions.EntityNotFoundException;
 import ucha.edu.pruebainditex.infrastructure.repositories.entities.Price;
-import ucha.edu.pruebainditex.application.ports.ServicePort;
-import ucha.edu.pruebainditex.infrastructure.repositories.PriceRepository;
 
+import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Optional;
+
 @AllArgsConstructor
 @Service
-public class GetPriceUseCase implements ServicePort {
+public class PriceUseCase implements ServicePort {
 
 
         private RepositoryPort port;
@@ -28,15 +28,16 @@ public class GetPriceUseCase implements ServicePort {
             if(prices.isEmpty()){
                 DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
                 String formattedDate = date.format(formatter);
-                throw new EntityNotFoundException("la entidad no se encuentra en base de datos, productid:" + productId + "bran id:" + brandId + "date:" + formattedDate );
+                throw new EntityNotFoundException("la entidad no se encuentra en base de datos, productid:" + productId + " brandId:" + brandId + " date:" + formattedDate );
             }else{
                 Price price=prices.get(0);
                 priceDto=PriceDto.builder()
                         .endDate(price.getEndDate())
-                        .price(price.getPrice())
+                        .price( new DecimalFormat("0.00#").format(price.getPrice())+" "+price.getCurrency())
                         .startDate(price.getStartDate())
-                        .brandId(price.getBrandId())
+                        .brandName(price.getBrand().getBrandName())
                         .productId(price.getProductId())
+                        .priceList(price.getPriceList())
                         .build();
             }
             return priceDto;

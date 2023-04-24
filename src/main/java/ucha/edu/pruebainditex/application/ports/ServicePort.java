@@ -1,10 +1,8 @@
-package ucha.edu.pruebainditex.infrastructure.ports;
+package ucha.edu.pruebainditex.application.ports;
 
-import ucha.edu.pruebainditex.domain.entities.Price;
+import ucha.edu.pruebainditex.domain.dto.PriceDto;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
-
 public interface ServicePort {
-    Optional<Price> getPrice(Long brandId, LocalDateTime date, Long productId, Integer priceList);
+    PriceDto getPrice(Long brandId, LocalDateTime date, Long productId);
 }

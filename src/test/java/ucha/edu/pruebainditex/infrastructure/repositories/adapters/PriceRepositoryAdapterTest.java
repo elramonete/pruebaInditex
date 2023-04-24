@@ -7,6 +7,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import ucha.edu.pruebainditex.infrastructure.repositories.PriceRepository;
+import ucha.edu.pruebainditex.infrastructure.repositories.entities.Brand;
 import ucha.edu.pruebainditex.infrastructure.repositories.entities.Price;
 
 import java.math.BigDecimal;
@@ -14,16 +15,16 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
-class PriceAdapterTest {
+class PriceRepositoryAdapterTest {
 
     @Mock
     private PriceRepository repository;
 
     @InjectMocks
-    private PriceAdapter priceAdapter;
+    private PriceRepositoryAdapter priceRepositoryAdapter;
 
     private Price price1;
     private Price price2;
@@ -39,24 +40,24 @@ class PriceAdapterTest {
                 .endDate(endDate1)
                 .price(new BigDecimal(25))
                 .startDate(startDate1)
-                .brandId(1L)
+                .brand(new Brand(1L,"ZARA"))
                 .productId(35455L)
                 .currency("EUR")
                 .id(1L)
                 .priceList(2)
                 .priority(0)
-                .build();;
+                .build();
         price2 = Price.builder()
                 .endDate(endDate2)
                 .price(new BigDecimal(35))
                 .startDate(startDate2)
-                .brandId(1L)
+                .brand(new Brand(1L,"ZARA"))
                 .productId(35455L)
                 .currency("EUR")
                 .id(1L)
                 .priceList(2)
                 .priority(0)
-                .build();;
+                .build();
     }
 
     @Test
@@ -69,7 +70,7 @@ class PriceAdapterTest {
                 1L, LocalDateTime.of(2023, 4, 15, 0, 0), LocalDateTime.of(2023, 4, 15, 0, 0), 1L))
                 .thenReturn(expectedPrices);
 
-        List<Price> actualPrices = priceAdapter.getPrice(1L, LocalDateTime.of(2023, 4, 15, 0, 0), 1L);
+        List<Price> actualPrices = priceRepositoryAdapter.getPrice(1L, LocalDateTime.of(2023, 4, 15, 0, 0), 1L);
 
         assertEquals(expectedPrices, actualPrices);
     }

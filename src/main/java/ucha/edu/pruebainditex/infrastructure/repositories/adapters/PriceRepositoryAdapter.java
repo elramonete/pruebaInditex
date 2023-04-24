@@ -10,11 +10,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 @AllArgsConstructor
 @Repository
-public class PriceAdapter implements RepositoryPort {
+public class PriceRepositoryAdapter implements RepositoryPort {
 
     PriceRepository repository;
     public List<Price> getPrice(Long brandId, LocalDateTime date, Long productId){
-        List<Price> prices = repository.findByBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndProductIdOrderByPriorityDesc(brandId,date,date,productId);
-        return prices;
+        return repository.findByBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndProductIdOrderByPriorityDesc(brandId,date,date,productId);
     }
 }
