@@ -1,4 +1,4 @@
-package ucha.edu.pruebainditex.application.ports;
+package ucha.edu.pruebainditex.domain.ports;
 
 import ucha.edu.pruebainditex.infrastructure.repositories.entities.Price;
 

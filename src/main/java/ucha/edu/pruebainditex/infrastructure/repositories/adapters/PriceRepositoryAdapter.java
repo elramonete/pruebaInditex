@@ -2,7 +2,7 @@ package ucha.edu.pruebainditex.infrastructure.repositories.adapters;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
-import ucha.edu.pruebainditex.application.ports.RepositoryPort;
+import ucha.edu.pruebainditex.domain.ports.RepositoryPort;
 import ucha.edu.pruebainditex.infrastructure.repositories.PriceRepository;
 import ucha.edu.pruebainditex.infrastructure.repositories.entities.Price;
 

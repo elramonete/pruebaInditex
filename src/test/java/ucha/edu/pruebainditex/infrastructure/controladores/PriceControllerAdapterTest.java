@@ -13,7 +13,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.servlet.MockMvc;
-import ucha.edu.pruebainditex.application.ports.ServicePort;
+import ucha.edu.pruebainditex.domain.ports.ServicePort;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

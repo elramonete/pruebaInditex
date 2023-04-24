@@ -6,9 +6,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import ucha.edu.pruebainditex.application.ports.RepositoryPort;
+import ucha.edu.pruebainditex.domain.ports.RepositoryPort;
 import ucha.edu.pruebainditex.domain.dto.PriceDto;
-import ucha.edu.pruebainditex.infrastructure.exceptions.EntityNotFoundException;
+import ucha.edu.pruebainditex.domain.exceptions.EntityNotFoundException;
 import ucha.edu.pruebainditex.infrastructure.repositories.entities.Brand;
 import ucha.edu.pruebainditex.infrastructure.repositories.entities.Price;
 

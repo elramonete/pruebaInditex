@@ -1,4 +1,4 @@
-package ucha.edu.pruebainditex.infrastructure.exceptions;
+package ucha.edu.pruebainditex.domain.exceptions;
 
 public class EntityNotFoundException extends RuntimeException{
 

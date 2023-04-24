@@ -2,10 +2,10 @@ package ucha.edu.pruebainditex.application;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import ucha.edu.pruebainditex.application.ports.RepositoryPort;
-import ucha.edu.pruebainditex.application.ports.ServicePort;
+import ucha.edu.pruebainditex.domain.ports.RepositoryPort;
+import ucha.edu.pruebainditex.domain.ports.ServicePort;
 import ucha.edu.pruebainditex.domain.dto.PriceDto;
-import ucha.edu.pruebainditex.infrastructure.exceptions.EntityNotFoundException;
+import ucha.edu.pruebainditex.domain.exceptions.EntityNotFoundException;
 import ucha.edu.pruebainditex.infrastructure.repositories.entities.Price;
 
 import java.text.DecimalFormat;
