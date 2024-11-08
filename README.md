@@ -10,7 +10,7 @@ Driver class: org.h2.Driver
 JDBC url: jdbc:h2:mem:testdb
 
 user: sa
-
+rar
 sin password
 
 ![image](https://user-images.githubusercontent.com/7735554/233590317-0035b22f-e5d6-41dd-beaf-9134589d8c40.png)

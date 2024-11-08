@@ -2,9 +2,11 @@ package ucha.edu.pruebainditex.application;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+
 import org.mockito.junit.jupiter.MockitoExtension;
 import ucha.edu.pruebainditex.domain.ports.RepositoryPort;
 import ucha.edu.pruebainditex.domain.dto.PriceDto;
@@ -23,7 +25,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
-
+@ExtendWith(MockitoExtension.class)
+class PriceUseCaseTest {
     @Mock
     private RepositoryPort port;
 
