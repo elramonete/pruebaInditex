@@ -1,7 +1,7 @@
 # PruebaInditex
 Este es el proyecto realizado para la prueba de inditex
 
-Para acceder a la base de datos al levantar el programa acceder a http://localhost:8080/h2-console
+Para acceder a la base de datos al levantar el programa acceder a http://localhost:8050/h2-console
 
 Los datos necesarios para ver la tabla son
 
@@ -15,7 +15,7 @@ sin password
 
 ![image](https://user-images.githubusercontent.com/7735554/233590317-0035b22f-e5d6-41dd-beaf-9134589d8c40.png)
 
-Teneis una interfaz swagger disponible para hacer las pruebas necesarias en http://localhost:8080/swagger-ui/
+Teneis una interfaz swagger disponible para hacer las pruebas necesarias en http://localhost:8050/swagger-ui/
 
 ![image](https://user-images.githubusercontent.com/7735554/233591202-9f26d139-71a0-4464-8977-c7bc8a31ed0b.png)
 
