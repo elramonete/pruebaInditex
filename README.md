@@ -9,6 +9,8 @@ Driver class: org.h2.Driver
 
 JDBC url: jdbc:h2:mem:testdb
 
+![alt text](image.png)
+
 user: sa
 rar
 sin password
